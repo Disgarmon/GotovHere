@@ -7,25 +7,20 @@
 
 import UIKit
 
-class RecipeCell: UITableViewCell {
+class RecipeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var recipeImage: UIImageView!
-    
     @IBOutlet weak var recipeNameLabel: UILabel!
     @IBOutlet weak var recipePriceLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    func sepupCell(){
-        
+    func setupCell(recipe:Recipe){
+        self.recipeImage.image = recipe.image
+        self.recipeNameLabel.text = recipe.title
+        self.recipePriceLabel.text = "\(recipe.description)"
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }

@@ -15,14 +15,24 @@ struct Recipe{
 }
 
 class RecipeList{
-    var products = [Recipe]()
+    
+    var recipes = [Recipe]()
     
     init() {
         setup()
     }
+    
  func setup(){
      let p1 = Recipe(title: "Название1", description: "Описание1", image: UIImage(named: "2022-08-26 14.13.12") ?? UIImage(systemName: "multiply.circle.fill")!)
      let p2 = Recipe(title: "Название2", description: "Описание2", image: UIImage(named: "2022-08-26 14.13.46") ?? UIImage(systemName: "multiply.circle.fill")!)
-     self.products = [p1, p2]
+     recipes.append(p1)
+     recipes.append(p2)
+    }
+}
+extension String{
+    func widthOfString(usingFont font: UIFont) -> CGFloat {
+             let fontAttributes = [NSAttributedString.Key.font: font]
+             let size = (self as NSString).size(withAttributes: fontAttributes)
+             return ceil(size.width)
     }
 }

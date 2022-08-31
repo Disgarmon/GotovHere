@@ -17,14 +17,15 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vCn-vN-nPZ">
-                        <rect key="frame" x="0.0" y="0.0" width="214" height="167"/>
+                        <rect key="frame" x="5" y="0.0" width="204" height="167"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="vCn-vN-nPZ" secondAttribute="trailing" id="SQq-52-jn4"/>
-                <constraint firstItem="vCn-vN-nPZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="TCM-bb-94d"/>
+                <constraint firstAttribute="trailing" secondItem="vCn-vN-nPZ" secondAttribute="trailing" constant="5" id="SQq-52-jn4"/>
+                <constraint firstItem="vCn-vN-nPZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="TCM-bb-94d"/>
                 <constraint firstItem="vCn-vN-nPZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="YFp-wA-vQY"/>
                 <constraint firstAttribute="bottom" secondItem="vCn-vN-nPZ" secondAttribute="bottom" id="lIL-EB-cij"/>
             </constraints>

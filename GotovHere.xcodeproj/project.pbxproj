@@ -20,6 +20,7 @@
 		996FA5B928BF9F74001227D4 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996FA5B728BF9F74001227D4 /* RecipeTableViewCell.swift */; };
 		996FA5BA28BF9F74001227D4 /* RecipeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 996FA5B828BF9F74001227D4 /* RecipeTableViewCell.xib */; };
 		996FA5BD28C11BB2001227D4 /* RecipeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996FA5BC28C11BB2001227D4 /* RecipeData.swift */; };
+		996FA5C128C14D10001227D4 /* FullRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996FA5C028C14D10001227D4 /* FullRecipeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		996FA5B728BF9F74001227D4 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
 		996FA5B828BF9F74001227D4 /* RecipeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeTableViewCell.xib; sourceTree = "<group>"; };
 		996FA5BC28C11BB2001227D4 /* RecipeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeData.swift; sourceTree = "<group>"; };
+		996FA5C028C14D10001227D4 /* FullRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullRecipeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				996FA5A728BD1473001227D4 /* RecipeViewController.swift */,
+				996FA5C028C14D10001227D4 /* FullRecipeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -103,8 +106,8 @@
 		996FA5A028BD100F001227D4 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				996FA59528BD0FBB001227D4 /* LaunchScreen.storyboard */,
 				996FA58D28BD0FB9001227D4 /* Main.storyboard */,
+				996FA59528BD0FBB001227D4 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				996FA5A828BD1473001227D4 /* RecipeViewController.swift in Sources */,
 				996FA5B328BF80FE001227D4 /* TableViewInCell.swift in Sources */,
 				996FA5B928BF9F74001227D4 /* RecipeTableViewCell.swift in Sources */,
+				996FA5C128C14D10001227D4 /* FullRecipeViewController.swift in Sources */,
 				996FA58828BD0FB9001227D4 /* AppDelegate.swift in Sources */,
 				996FA5B028BF7BBE001227D4 /* AlertController.swift in Sources */,
 				996FA58A28BD0FB9001227D4 /* SceneDelegate.swift in Sources */,

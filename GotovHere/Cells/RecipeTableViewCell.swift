@@ -26,6 +26,4 @@ class RecipeTableViewCell: UITableViewCell {
     }
 }
 
-extension RecipeTableViewCell{
-    
-}
+

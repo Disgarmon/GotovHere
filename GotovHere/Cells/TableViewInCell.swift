@@ -11,6 +11,8 @@ class TableViewInCell: UICollectionViewCell {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var fullScreenHandler:((_ cell: TableViewInCell, _ indexRecipe:Int) ->Void)?
+    
     private var recipes: [Recipe] = []
     
     override func awakeFromNib() {
@@ -42,12 +44,13 @@ extension TableViewInCell:UITableViewDataSource, UITableViewDelegate {
         return cell
     } // какие именно ячейки
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        self.tableView.deselectRow(at: indexPath, animated: true)
-//        fullScreenHandler?(self,indexPath.row)
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: true)
+       fullScreenHandler?(self,indexPath.row)
+    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
 }
+

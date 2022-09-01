@@ -12,7 +12,7 @@ class RecipeViewController: UIViewController {
     // MARK: - IB Outlets
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let recipe = Recipe.getRecipe() // создал массив с рецептами
+    let recipes = Recipe.getRecipe() // создал массив с рецептами
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,14 +25,30 @@ class RecipeViewController: UIViewController {
 extension RecipeViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return recipe.count // кол-во эл-в массива = кол-во ячеек
+        return recipes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TableViewInCell", for: indexPath) as! TableViewInCell
        
-        let recipes = recipe[indexPath.item]
+        let recipes = recipes[indexPath.item]
+        cell.fullScreenHandler = fullScreenHandler
         cell.setupCell(recipes: [recipes])
         return cell 
+    }
+}
+
+extension RecipeViewController{
+    func fullScreenHandler(cell: TableViewInCell, indexRecipe:Int){
+        if let indexPath = self.collectionView.indexPath(for: cell){
+            let recipes = recipes[indexPath.item]
+            
+            guard let vc = storyboard?.instantiateViewController(identifier: "FullRecipeViewController") as? FullRecipeViewController else { return }
+            
+            vc.recipes = recipes
+            vc.indexPath = IndexPath(row: indexRecipe, section: 0)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        print("fullScreenHandler")
     }
 }

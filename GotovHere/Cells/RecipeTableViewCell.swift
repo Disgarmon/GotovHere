@@ -13,14 +13,19 @@ class RecipeTableViewCell: UITableViewCell {
     @IBOutlet weak var recipeNameLabel: UILabel!
     @IBOutlet weak var recipePriceLabel: UILabel!
     
+    let recipe = Recipe.getRecipe()
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
     func setupCell(recipe:Recipe){
-        self.recipeImage.image = recipe.image
+        self.recipeImage.image = UIImage(named: recipe.image) ?? UIImage(systemName: "multiply.circle.fill")!
         self.recipeNameLabel.text = recipe.title
         self.recipePriceLabel.text = "\(recipe.description)"
     }
+}
+
+extension RecipeTableViewCell{
+    
 }

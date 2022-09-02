@@ -34,7 +34,7 @@ class RecipeTVController: UITableViewController {
         content.text = recipes.title
         content.secondaryText = recipes.description
         content.image = UIImage(named: recipes.image) ?? UIImage(systemName: "error")
-        content.imageProperties.cornerRadius = 20
+        content.imageProperties.cornerRadius = 10
         cell.contentConfiguration = content
         return cell
     }

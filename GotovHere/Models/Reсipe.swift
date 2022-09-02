@@ -29,7 +29,7 @@ extension Recipe{
                 description: desctiptions[index],
                 image: images[index])
             
-            recipes.append(contentsOf: repeatElement(recipe, count: 10))
+            recipes.append(contentsOf: repeatElement(recipe, count: 1))
         }
         return recipes
     }

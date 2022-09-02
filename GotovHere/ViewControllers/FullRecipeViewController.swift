@@ -19,7 +19,7 @@ class FullRecipeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        recipeImage.image = UIImage(named: recipe.image)
+        recipeImage.image = UIImage(named: recipe.image) ?? UIImage(systemName: "error")
         titleLabel.text = recipe.title
         descriptionLabel.text = "\(recipe.description)"
     }

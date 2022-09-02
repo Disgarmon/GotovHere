@@ -12,13 +12,14 @@ class RecipeViewController: UIViewController {
     // MARK: - IB Outlets
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let recipes = Recipe.getRecipe() // создал массив с рецептами
+    let recipes = Recipe.getRecipe() 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.register(UINib(nibName: "TableViewInCell", bundle: nil), forCellWithReuseIdentifier: "TableViewInCell")
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
+    
     }
 }
 
@@ -42,13 +43,24 @@ extension RecipeViewController{
     func fullScreenHandler(cell: TableViewInCell, indexRecipe:Int){
         if let indexPath = self.collectionView.indexPath(for: cell){
             let recipes = recipes[indexPath.item]
-            
-            guard let vc = storyboard?.instantiateViewController(identifier: "FullRecipeViewController") as? FullRecipeViewController else { return }
-            
-            vc.recipes = recipes
-            vc.indexPath = IndexPath(row: indexRecipe, section: 0)
-            self.navigationController?.pushViewController(vc, animated: true)
+            func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+                guard segue.identifier == "recipeSegue" else { return }
+                guard let vc = segue.destination as? FullRecipeViewController else { return }
+                
+                vc.recipes = [recipes]
+                vc.indexPath = indexPath
+            }
         }
+        performSegue(withIdentifier: "recipeSegue", sender: nil)
         print("fullScreenHandler")
+        
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "recipeSegue" else { return }
+        guard let vc = segue.destination as? FullRecipeViewController else { return }
+        
+        vc.recipes = recipes
     }
 }
+
+

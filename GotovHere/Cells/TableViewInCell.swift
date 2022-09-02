@@ -36,17 +36,18 @@ class TableViewInCell: UICollectionViewCell {
 extension TableViewInCell:UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.recipes.count
-    } // кол-во ячеек
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeTableViewCell") as! RecipeTableViewCell
         cell.setupCell(recipe: self.recipes[indexPath.row])
         return cell
-    } // какие именно ячейки
+    } 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
        fullScreenHandler?(self,indexPath.row)
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
